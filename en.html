@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gürbüz Robotic</title>
+
+<style>
+:root {
+  --blue: #0A3D62;
+  --light-gray: #f5f7fa;
+  --dark: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* NAVBAR */
+nav {
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--blue);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  background: url('blueHero.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 80px 0;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: white;
+  color: var(--blue);
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-blu {
+  background: rgb(10,61,98);
+  color: rgb(255,255,255);
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* SECTIONS */
+.section {
+  padding: 30px 0;
+}
+
+.section-title {
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: var(--blue);
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  flex: 1;
+  min-width: 250px;
+  border: 1px solid #ddd;
+  padding: 25px;
+  background: white;
+}
+
+.feature-box h3 {
+  margin-bottom: 10px;
+}
+
+/* TRUST */
+.trust-list {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+.trust-list li {
+  font-weight: bold; /* Make list items bold */
+  position: relative;
+  padding-left: 40px; /* Add space for the circle */
+}
+
+.trust-list li::before {
+  content: '\2713'; /* Unicode for a check mark */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(10,61,98); /* Blue circle */
+  color: white; /* White tickmark */
+  width: 20px; /* Circle size */
+  height: 20px;
+  border-radius: 50%; /* Make it round */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px; /* Adjust tickmark size */
+}
+
+.trust-list li span {
+  display: inline-block;
+  padding-left: 10px; /* Space between tick and text */
+}
+
+/* PRODUCT */
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.product img {
+  width: 100%;
+  max-width: 400px;
+  background: #ddd;
+  height: 250px;
+}
+
+.product-text {
+  flex: 1;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  background: var(--blue);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: var(--blue);
+  color: white;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .product {
+    flex-direction: column;
+  }
+
+  nav ul {
+    gap: 15px;
+    font-size: 14px;
+  }
+}
+
+/* Add space between paragraphs and lists */
+p {
+  margin-bottom: 20px;  /* Add space after each paragraph */
+}
+
+ul, ol {
+  margin-top: 20px;    /* Add space before each list */
+  margin-bottom: 20px; /* Add space after each list */
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: space-between; /* Space out the feature boxes */
+  gap: 20px; /* Optional: Add space between the boxes */
+}
+
+.feature-box {
+  display: flex;
+  align-items: center; /* Vertically center-align the icon and text */
+  padding: 20px;
+  border: 1px solid #ddd; /* Box border */
+  border-radius: 8px; /* Optional: rounded corners */
+  flex: 1; /* Make each box equally wide */
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column; /* Stack h3 and p vertically */
+  margin-left: 15px; /* Space between icon and text */
+  text-align: left; /* Align text to the left */
+}
+
+.feature-icon {
+  width: 60px; /* Icon size */
+  height: 60px; /* Icon size */
+  object-fit: contain; /* Ensure the image scales well */
+}
+
+.feature-box h3 {
+  margin-bottom: 10px; /* Space between title and description */
+}
+
+.feature-box p {
+  margin-bottom: 0; /* Optional: Remove bottom margin from the paragraph */
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Gürbüz Robotik</div>
+    <ul>
+      <!-- <li><a href="#home">Homepage</a></li> -->
+      <li><a href="#products">Products</a></li>
+	  <li><a href="#services">Services</a></li>
+      <!-- <li><a href="#about">About Us</a></li> -->
+      <li><a href="#contact">Contact</a></li>
+	  <li><a href="index.html">TR</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home" >
+  <div class="container">
+    <h1>Powerful Solutions for Industrial Automation</h1>
+    <p>Gürbüz Robotik offers automation systems for faster and secure manufacturing processes.</p>
+    <a href="#contact" class="btn">Contact Us</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="container">
+    <div class="features">
+      <div class="feature-box">
+        <img src="st.jpg" alt="Tough Design" class="feature-icon">
+        <div class="feature-text">
+          <h3>Robust Design</h3>
+          <p>Robust machine design suited for tough manufacturing environments.</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <img src="gp.jpg" alt="Reliable Performance" class="feature-icon">
+        <div class="feature-text">
+          <h3>Reliable Performance</h3>
+          <p>Optimized systems for continuous operations.</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <img src="yd.jpg" alt="Local Support" class="feature-icon">
+        <div class="feature-text">
+          <h3>Local Support</h3>
+          <p>Enjoy non-stop production, thanks to our fast service and technical support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT HIGHLIGHT -->
+<section class="section" style="background: var(--light-gray);">
+  <div class="container product">
+    <img src="Etikso_Side.jpg" alt="Makine Görseli">
+    <div class="product-text">
+      <h2>EM-200</h2>
+	  <h2>Semi-Automatic Carton Lid Sticker Machine</h2>
+	  <br>
+	  <br>
+      <p>Easily integrate into production, gain high speed and precise labeling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Why Gürbüz Robotik?</h2>
+    <ul class="trust-list">
+      <li><span>Locally built</span></li>
+      <li><span>Economic</span></li>
+      <li><span>Ease of Maintenance</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRODUCTS PAGE -->
+<section class="section" id="products">
+  <div class="container">
+    <h2 class="section-title">Products</h2>
+    <div class="product">
+      <div class="product-text">
+        <h3>EM200 - Semi Automatic Box Lid Sticker Machine</h3>
+        <p>Working with high precision, this robot provides fast and reliable labeling in your production line.</p>
+
+        <ul>
+          <li>High Precision - Every Time</li>
+          <li>Continious Operation - 24/7</li>
+          <li>Easy Integration - No Learning Curve</li>
+        </ul>
+
+        <table>
+          <tr><th>Feature</th><th>Value</th></tr>
+          <tr><td>Speed</td><td>200 box/min</td></tr>
+          <tr><td>Power</td><td>15 kW</td></tr>
+          <tr><td>Dimensions</td><td>80 x 20 x 60 cm</td></tr>
+        </table>
+      </div>
+	  <img src="Etikso_Front.jpg" alt="Kutu Etiketleme">
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES PAGE -->
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+
+    <div class="product">
+      <img class="image" src="LaptopOnLine.jpg" alt="Özel Hizmetler">
+      <div class="product-text">
+        <h3>Özel Çözümler ve Projeler</h3>
+        <p>Mühendisler tarafından incelenip, üretim hattınıza özel tasarlanmış sistemler.</p>
+
+        <ul>
+          <li>Kaliteli komponentler</li>
+          <li>Gürbüz ve dayanıklı sistemler</li>
+          <li>İsteğe bağlı özel tasarım</li>
+        </ul>
+		<p> </p>
+		<p>Özel istekleriniz, proje ve yerel incelemesi için iletişime geçin.</p>
+		    <a href="#contact" class="btn-blu">Bizimle İletişime Geçin</a>
+
+        <!-- <table>
+          <tr><th>Özellik</th><th>Değer</th></tr>
+          <tr><td>Hız</td><td>200 ürün/dk</td></tr>
+          <tr><td>Güç</td><td>15 kW</td></tr>
+          <tr><td>Boyut</td><td>80 x 20 x 60 cm</td></tr>
+        </table> -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about" style="background: var(--light-gray);">
+  <div class="container">
+    <h2 class="section-title">Hakkımızda</h2>
+    <p>
+      Gürbüz Robotik olarak, mühendislik odaklı yaklaşımıyla endüstriyel otomasyon sistemleri geliştiriyoruz.
+      Amacımız, üretim süreçlerini daha verimli, güvenilir ve sürdürülebilir hale getiren makineler üretmektir.
+    </p>
+    <br>
+    <p>
+      Sürekli iyileştirme (Kaizen) prensibi ile çalışıp, her projede daha iyi çözümler üretmeyi hedefleriz.
+      Tasarladığımız her makine, uzun ömürlü kullanım ve kolay bakım esas alınarak geliştirilir.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="section-title">İletişim</h2>
+
+    <!-- <form>
+      <input type="text" placeholder="Adınız">
+      <input type="text" placeholder="Firma Adı">
+      <input type="text" placeholder="Telefon">
+      <textarea placeholder="Mesajınız"></textarea>
+      <button>Gönder</button>
+    </form> -->
+
+    <br>
+    <p><strong>Telefon:</strong> +90 541 104 3077</p>
+    <p><strong>Email:</strong> emad@gurbuzrobotik.com</p>
+    <p><strong>Adres:</strong> Kirazlı Sanayii Sitesi, 34. sk. B-49 Merkez/Yalova, Türkiye</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p><strong>Gürbüz Robotik</strong></p>
+    <p>Endüstriyel otomasyon ve makine çözümleri</p>
+    <p>emad@gurbuzrobotik.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
